@@ -60,18 +60,12 @@ struct FilterBooksView: View {
                 .padding(.horizontal, 25)
                 .padding(.vertical, 5)
 
-            Button(action: {
+            Button("Apply") {
                 appliedEbookSelected = isEbookSelected
                 appliedAudiobookSelected = isAudiobookSelected
                 showThisView = false
-            }) {
-                Text("Apply")
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(10)
             }
+            .filledButton()
             .padding(.vertical)
             .padding(.horizontal, 23)
         }

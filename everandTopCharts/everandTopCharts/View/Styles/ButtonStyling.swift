@@ -21,8 +21,23 @@ struct BorderedCapsuledStyle: ButtonStyle {
     }
 }
 
+struct FilledCornerRadiusStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundColor(Color(.systemBackground))
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(.primary)
+            .cornerRadius(10)
+    }
+}
+
 extension Button {
     func borderedCapsuledButton() -> some View {
         buttonStyle(BorderedCapsuledStyle())
+    }
+    
+    func filledButton() -> some View {
+        buttonStyle(FilledCornerRadiusStyle())
     }
 }
