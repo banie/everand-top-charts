@@ -19,8 +19,27 @@ struct ContentView: View {
                 Divider()
                 List {
                     Text("The most popular books and audiobooks generating buzz from critics, NYT and more.")
-                        .foregroundColor(.secondary)
+                        .font(.callout)
+                        .fontWeight(.medium)
+                        .foregroundColor(.primary)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .listRowSeparator(.hidden)
+                    
+                    Button(action: {
+                        // TODO: show the toast filter
+                    }) {
+                        HStack {
+                            Text("Formats")
+                                .font(.caption)
+                            Image(systemName: "chevron.down")
+                                .resizable()
+                                .fontWeight(.heavy)
+                                .frame(maxWidth: 10, maxHeight: 5)
+                        }
+                    }
+                    .borderedCapsuledButton()
+                    .listRowSeparator(.hidden)
+                    
                     ForEach(viewModel.books.indices, id: \.self) { index in
                         BookItemView(index: index, book: viewModel.books[index])
                             .listRowSeparator(.hidden)

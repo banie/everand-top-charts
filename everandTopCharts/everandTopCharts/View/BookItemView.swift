@@ -20,6 +20,7 @@ struct BookItemView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(maxWidth: 50, maxHeight: 50)
+                .foregroundColor(.secondary)
             VStack(spacing: 2) {
                 Text(book.title)
                     .font(.title2)
