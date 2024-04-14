@@ -32,7 +32,6 @@ struct FilterBooksView: View {
                         .tint(.secondary)
                 }
             }
-            .padding(.vertical, 8)
             .padding(.horizontal, 25)
             
             Button(action: {
@@ -44,16 +43,18 @@ struct FilterBooksView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 25)
+            .padding(.top, 1)
+            .padding(.bottom, 5)
 
-            Toggle(isOn: $isEbookSelected) {
-                Text("Ebooks")
-            }
-            .padding(.horizontal, 25)
+            Toggle("Ebooks", isOn: $isEbookSelected)
+                .checkboxToggle()
+                .padding(.horizontal, 25)
+                .padding(.vertical, 5)
 
-            Toggle(isOn: $isAudiobookSelected) {
-                Text("Audiobooks")
-            }
-            .padding(.horizontal, 25)
+            Toggle("Audiobooks", isOn: $isAudiobookSelected)
+                .checkboxToggle()
+                .padding(.horizontal, 25)
+                .padding(.vertical, 5)
 
             Button(action: {
                 // Handle the apply action

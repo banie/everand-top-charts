@@ -23,6 +23,7 @@
 		71C9C6F82BCA32C7005A29CB /* everandTopChartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9C6F72BCA32C7005A29CB /* everandTopChartsTests.swift */; };
 		71C9C7022BCA32C7005A29CB /* everandTopChartsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9C7012BCA32C7005A29CB /* everandTopChartsUITests.swift */; };
 		71C9C7042BCA32C7005A29CB /* everandTopChartsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9C7032BCA32C7005A29CB /* everandTopChartsUITestsLaunchTests.swift */; };
+		71D7ACF92BCC8651009C1F29 /* ToggleStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7ACF82BCC8651009C1F29 /* ToggleStyling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		71C9C6FD2BCA32C7005A29CB /* everandTopChartsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = everandTopChartsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C9C7012BCA32C7005A29CB /* everandTopChartsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = everandTopChartsUITests.swift; sourceTree = "<group>"; };
 		71C9C7032BCA32C7005A29CB /* everandTopChartsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = everandTopChartsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		71D7ACF82BCC8651009C1F29 /* ToggleStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStyling.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				7105F0A72BCC59ED000055CE /* ButtonStyling.swift */,
+				71D7ACF82BCC8651009C1F29 /* ToggleStyling.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				71C9C6E72BCA32C4005A29CB /* ContentView.swift in Sources */,
 				71C9C6E92BCA32C4005A29CB /* Item.swift in Sources */,
 				7105F0932BCB9CC1000055CE /* BookItemView.swift in Sources */,
+				71D7ACF92BCC8651009C1F29 /* ToggleStyling.swift in Sources */,
 				7105F0A52BCC4D3D000055CE /* TopChartViewModel.swift in Sources */,
 				7105F0962BCC3101000055CE /* Book.swift in Sources */,
 				7105F0AA2BCC648C000055CE /* FilterBooksView.swift in Sources */,

@@ -26,4 +26,3 @@ extension Button {
         buttonStyle(BorderedCapsuledStyle())
     }
 }
-
