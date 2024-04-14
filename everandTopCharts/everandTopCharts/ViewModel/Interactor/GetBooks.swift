@@ -25,6 +25,6 @@ class GetBooksFromResource: GetBooksApi {
     }
     
     func getListOfBooks() -> Result<[Book], ApiError> {
-        return getRequestApi.get(from: "book_list.json")
+        return getRequestApi.get(from: "book_list")
     }
 }

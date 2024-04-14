@@ -16,6 +16,7 @@ class GetFromLocalResource {
     
     func get<T>(from fileName: String) -> Result<T, ApiError> where T: Decodable {
         guard let path = Bundle.main.path(forResource: fileName, ofType: "json") else {
+            print("not able to construct path with filename: \(fileName)")
             return .failure(.invalidPath)
         }
         

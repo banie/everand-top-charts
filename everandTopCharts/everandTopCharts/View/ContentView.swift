@@ -10,7 +10,8 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+//    @Query private var books: [Book]
+    @StateObject var viewModel: TopChartViewModel
 
     var body: some View {
         NavigationSplitView {
@@ -20,20 +21,9 @@ struct ContentView: View {
                     Text("The most popular books and audiobooks generating buzz from critics, NYT and more.")
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    ForEach(items.indices, id: \.self) { index in
-                        BookItemView(index: index)
+                    ForEach(viewModel.books.indices, id: \.self) { index in
+                        BookItemView(index: index, book: viewModel.books[index])
                             .listRowSeparator(.hidden)
-                    }
-                    .onDelete(perform: deleteItems)
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
                     }
                 }
             }
@@ -42,26 +32,13 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
         } detail: {
             Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
+        }.onAppear() {
+            viewModel.load()
         }
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(viewModel: TopChartViewModel())
         .modelContainer(for: Item.self, inMemory: true)
 }

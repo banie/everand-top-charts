@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BookItemView: View {
     let index: Int
+    let book: Book
     
     var body: some View {
         HStack {
@@ -20,14 +21,14 @@ struct BookItemView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(maxWidth: 50, maxHeight: 50)
             VStack(spacing: 2) {
-                Text("Book Title")
+                Text(book.title)
                     .font(.title2)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Text("Book Author")
+                Text(book.author)
                     .font(.subheadline)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 HStack(spacing: 2) {
-                    let numOfStars: Int = 4
+                    let numOfStars: Int = book.rating
                     ForEach(1...numOfStars, id: \.self) { _ in
                         Image(systemName: "star.fill")
                     }
