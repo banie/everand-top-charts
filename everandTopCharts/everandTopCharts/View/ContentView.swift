@@ -15,8 +15,10 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView {
-            VStack {
+            VStack(spacing: 0) {
                 Divider()
+                    .padding(.bottom, 0)
+                
                 List {
                     Text("The most popular books and audiobooks generating buzz from critics, NYT and more.")
                         .font(.callout)
