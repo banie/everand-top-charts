@@ -15,12 +15,38 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                Text("The most popular books and audiobooks generating buzz from critics, NYT and more.")
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                ForEach(items.indices, id: \.self) { index in
+                    HStack {
+                        Text("\(index + 1). ")
+                            .frame(maxHeight: .infinity, alignment: .top)
+                            .padding(.top)
+                        Image(systemName: "book.closed.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(maxWidth: 50, maxHeight: 50)
+                        VStack(spacing: 2) {
+                            Text("Book Title")
+                                .font(.title2)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text("Book Author")
+                                .font(.subheadline)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            HStack(spacing: 2) {
+                                let numOfStars: Int = 4
+                                ForEach(1...numOfStars, id: \.self) { _ in
+                                    Image(systemName: "star.fill")
+                                }
+                            }
+                            .padding(.top, 5)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(.yellow)
+                        }
+                        .padding(.leading, 10)
                     }
+                    .listRowSeparator(.hidden)
                 }
                 .onDelete(perform: deleteItems)
             }
@@ -34,6 +60,9 @@ struct ContentView: View {
                     }
                 }
             }
+            .listStyle(.plain)
+            .navigationTitle("Top Chart")
+            .navigationBarTitleDisplayMode(.inline)
         } detail: {
             Text("Select an item")
         }
