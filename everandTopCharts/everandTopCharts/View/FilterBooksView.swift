@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct FilterBooksView: View {
+    @Binding<Bool> var appliedEbookSelected: Bool
+    @Binding<Bool> var appliedAudiobookSelected: Bool
+    @Binding<Bool> var showThisView: Bool
+    
     @State private var isEbookSelected: Bool = false
     @State private var isAudiobookSelected: Bool = false
 
@@ -25,8 +29,7 @@ struct FilterBooksView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Button(action: {
-                    // Handle the apply action
-                    print("Filter applied. eBooks: \(isEbookSelected), Audiobooks: \(isAudiobookSelected)")
+                    showThisView = false
                 }) {
                     Image(systemName: "x.circle.fill")
                         .tint(.secondary)
@@ -35,7 +38,8 @@ struct FilterBooksView: View {
             .padding(.horizontal, 25)
             
             Button(action: {
-                // TODO: clear all
+                isEbookSelected = false
+                isAudiobookSelected = false
             }) {
                 Text("Clear all")
                     .font(.caption)
@@ -57,8 +61,9 @@ struct FilterBooksView: View {
                 .padding(.vertical, 5)
 
             Button(action: {
-                // Handle the apply action
-                print("Filter applied. eBooks: \(isEbookSelected), Audiobooks: \(isAudiobookSelected)")
+                appliedEbookSelected = isEbookSelected
+                appliedAudiobookSelected = isAudiobookSelected
+                showThisView = false
             }) {
                 Text("Apply")
                     .foregroundColor(.white)
@@ -72,5 +77,9 @@ struct FilterBooksView: View {
         }
         .background(Color(.systemBackground))
         .cornerRadius(20)
+        .onAppear() {
+            isEbookSelected = appliedEbookSelected
+            isAudiobookSelected = appliedAudiobookSelected
+        }
     }
 }

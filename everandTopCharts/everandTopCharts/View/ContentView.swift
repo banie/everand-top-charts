@@ -13,6 +13,8 @@ struct ContentView: View {
 //    @Query private var books: [Book]
     @StateObject var viewModel: TopChartViewModel
     
+    @State private var appliedEbookSelected = false
+    @State private var appliedAudiobookSelected = false
     @State private var showFilterView = false
 
     var body: some View {
@@ -67,7 +69,9 @@ struct ContentView: View {
 //            }
             
             if showFilterView {
-                FilterBooksView()
+                FilterBooksView(appliedEbookSelected: $appliedEbookSelected,
+                                appliedAudiobookSelected: $appliedAudiobookSelected,
+                                showThisView: $showFilterView)
                     .transition(.move(edge: .bottom))
             }
         } detail: {
