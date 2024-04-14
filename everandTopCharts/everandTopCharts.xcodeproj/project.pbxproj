@@ -24,6 +24,7 @@
 		71C9C7022BCA32C7005A29CB /* everandTopChartsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9C7012BCA32C7005A29CB /* everandTopChartsUITests.swift */; };
 		71C9C7042BCA32C7005A29CB /* everandTopChartsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9C7032BCA32C7005A29CB /* everandTopChartsUITestsLaunchTests.swift */; };
 		71D7ACF92BCC8651009C1F29 /* ToggleStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7ACF82BCC8651009C1F29 /* ToggleStyling.swift */; };
+		71D7ACFB2BCCA053009C1F29 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7ACFA2BCCA053009C1F29 /* RoundedCorner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		71C9C7012BCA32C7005A29CB /* everandTopChartsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = everandTopChartsUITests.swift; sourceTree = "<group>"; };
 		71C9C7032BCA32C7005A29CB /* everandTopChartsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = everandTopChartsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		71D7ACF82BCC8651009C1F29 /* ToggleStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStyling.swift; sourceTree = "<group>"; };
+		71D7ACFA2BCCA053009C1F29 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			children = (
 				7105F0A72BCC59ED000055CE /* ButtonStyling.swift */,
 				71D7ACF82BCC8651009C1F29 /* ToggleStyling.swift */,
+				71D7ACFA2BCCA053009C1F29 /* RoundedCorner.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71D7ACFB2BCCA053009C1F29 /* RoundedCorner.swift in Sources */,
 				71C9C6E72BCA32C4005A29CB /* ContentView.swift in Sources */,
 				71C9C6E92BCA32C4005A29CB /* Item.swift in Sources */,
 				7105F0932BCB9CC1000055CE /* BookItemView.swift in Sources */,

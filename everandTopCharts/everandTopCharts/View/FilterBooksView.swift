@@ -21,7 +21,7 @@ struct FilterBooksView: View {
                 .resizable()
                 .frame(maxWidth: 30, maxHeight: 3)
                 .foregroundColor(.secondary)
-                .padding(.top, 4)
+                .padding(.top, 10)
             
             HStack {
                 Text("Formats")
@@ -70,7 +70,11 @@ struct FilterBooksView: View {
             .padding(.horizontal, 23)
         }
         .background(Color(.systemBackground))
-        .cornerRadius(20)
+        .roundedCorner(30, corners: [.topLeft, .topRight])
+        .shadow(radius: 15)
+        .mask(Rectangle()
+            .padding(.top, -30)
+            .padding(.bottom, 15))
         .onAppear() {
             isEbookSelected = appliedEbookSelected
             isAudiobookSelected = appliedAudiobookSelected
