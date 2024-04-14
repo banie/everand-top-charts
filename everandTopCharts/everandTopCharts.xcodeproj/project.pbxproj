@@ -14,6 +14,7 @@
 		7105F0A32BCC4241000055CE /* GetFromLocalResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7105F0A12BCC4241000055CE /* GetFromLocalResource.swift */; };
 		7105F0A52BCC4D3D000055CE /* TopChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7105F0A42BCC4D3D000055CE /* TopChartViewModel.swift */; };
 		7105F0A82BCC59ED000055CE /* ButtonStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7105F0A72BCC59ED000055CE /* ButtonStyling.swift */; };
+		7105F0AA2BCC648C000055CE /* FilterBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7105F0A92BCC648C000055CE /* FilterBooksView.swift */; };
 		71C9C6E52BCA32C4005A29CB /* everandTopChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9C6E42BCA32C4005A29CB /* everandTopChartsApp.swift */; };
 		71C9C6E72BCA32C4005A29CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9C6E62BCA32C4005A29CB /* ContentView.swift */; };
 		71C9C6E92BCA32C4005A29CB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9C6E82BCA32C4005A29CB /* Item.swift */; };
@@ -49,6 +50,7 @@
 		7105F0A12BCC4241000055CE /* GetFromLocalResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFromLocalResource.swift; sourceTree = "<group>"; };
 		7105F0A42BCC4D3D000055CE /* TopChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartViewModel.swift; sourceTree = "<group>"; };
 		7105F0A72BCC59ED000055CE /* ButtonStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyling.swift; sourceTree = "<group>"; };
+		7105F0A92BCC648C000055CE /* FilterBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBooksView.swift; sourceTree = "<group>"; };
 		71C9C6E12BCA32C4005A29CB /* everandTopCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = everandTopCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C9C6E42BCA32C4005A29CB /* everandTopChartsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = everandTopChartsApp.swift; sourceTree = "<group>"; };
 		71C9C6E62BCA32C4005A29CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				7105F0A62BCC59DB000055CE /* Styles */,
 				71C9C6E62BCA32C4005A29CB /* ContentView.swift */,
 				7105F0922BCB9CC1000055CE /* BookItemView.swift */,
+				7105F0A92BCC648C000055CE /* FilterBooksView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				7105F0932BCB9CC1000055CE /* BookItemView.swift in Sources */,
 				7105F0A52BCC4D3D000055CE /* TopChartViewModel.swift in Sources */,
 				7105F0962BCC3101000055CE /* Book.swift in Sources */,
+				7105F0AA2BCC648C000055CE /* FilterBooksView.swift in Sources */,
 				7105F0A32BCC4241000055CE /* GetFromLocalResource.swift in Sources */,
 				7105F0A82BCC59ED000055CE /* ButtonStyling.swift in Sources */,
 				7105F0A22BCC4241000055CE /* GetBooks.swift in Sources */,

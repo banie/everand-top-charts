@@ -12,6 +12,8 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
 //    @Query private var books: [Book]
     @StateObject var viewModel: TopChartViewModel
+    
+    @State private var showFilterView = false
 
     var body: some View {
         NavigationSplitView {
@@ -28,7 +30,9 @@ struct ContentView: View {
                         .listRowSeparator(.hidden)
                     
                     Button(action: {
-                        // TODO: show the toast filter
+                        withAnimation {
+                            showFilterView.toggle()
+                        }
                     }) {
                         HStack {
                             Text("Formats")
@@ -41,7 +45,7 @@ struct ContentView: View {
                     }
                     .borderedCapsuledButton()
                     .listRowSeparator(.hidden)
-                    
+ 
                     ForEach(viewModel.books.indices, id: \.self) { index in
                         BookItemView(index: index, book: viewModel.books[index])
                             .listRowSeparator(.hidden)
@@ -51,6 +55,21 @@ struct ContentView: View {
             .listStyle(.plain)
             .navigationTitle("Top Chart")
             .navigationBarTitleDisplayMode(.inline)
+            
+//            if showFilterView {
+//                GeometryReader { reader in
+//                    VStack {
+//                        Spacer()
+//                        FilterBooksView()
+//                    }
+//                }
+//                .transition(.move(edge: .bottom))
+//            }
+            
+            if showFilterView {
+                FilterBooksView()
+                    .transition(.move(edge: .bottom))
+            }
         } detail: {
             Text("Select an item")
         }.onAppear() {
