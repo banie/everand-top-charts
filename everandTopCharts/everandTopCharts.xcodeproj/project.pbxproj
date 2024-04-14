@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7105F0932BCB9CC1000055CE /* BookItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7105F0922BCB9CC1000055CE /* BookItemView.swift */; };
 		71C9C6E52BCA32C4005A29CB /* everandTopChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9C6E42BCA32C4005A29CB /* everandTopChartsApp.swift */; };
 		71C9C6E72BCA32C4005A29CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9C6E62BCA32C4005A29CB /* ContentView.swift */; };
 		71C9C6E92BCA32C4005A29CB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9C6E82BCA32C4005A29CB /* Item.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7105F0922BCB9CC1000055CE /* BookItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookItemView.swift; sourceTree = "<group>"; };
 		71C9C6E12BCA32C4005A29CB /* everandTopCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = everandTopCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C9C6E42BCA32C4005A29CB /* everandTopChartsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = everandTopChartsApp.swift; sourceTree = "<group>"; };
 		71C9C6E62BCA32C4005A29CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7105F0912BCB9C9C000055CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71C9C6E62BCA32C4005A29CB /* ContentView.swift */,
+				7105F0922BCB9CC1000055CE /* BookItemView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		71C9C6D82BCA32C4005A29CB = {
 			isa = PBXGroup;
 			children = (
@@ -96,8 +107,8 @@
 		71C9C6E32BCA32C4005A29CB /* everandTopCharts */ = {
 			isa = PBXGroup;
 			children = (
+				7105F0912BCB9C9C000055CE /* View */,
 				71C9C6E42BCA32C4005A29CB /* everandTopChartsApp.swift */,
-				71C9C6E62BCA32C4005A29CB /* ContentView.swift */,
 				71C9C6E82BCA32C4005A29CB /* Item.swift */,
 				71C9C6EA2BCA32C6005A29CB /* Assets.xcassets */,
 				71C9C6EC2BCA32C6005A29CB /* Preview Content */,
@@ -262,6 +273,7 @@
 			files = (
 				71C9C6E72BCA32C4005A29CB /* ContentView.swift in Sources */,
 				71C9C6E92BCA32C4005A29CB /* Item.swift in Sources */,
+				7105F0932BCB9CC1000055CE /* BookItemView.swift in Sources */,
 				71C9C6E52BCA32C4005A29CB /* everandTopChartsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
