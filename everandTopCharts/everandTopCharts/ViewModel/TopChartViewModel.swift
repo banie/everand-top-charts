@@ -6,23 +6,30 @@
 //
 
 import Foundation
+import SwiftData
 
 @MainActor
 class TopChartViewModel: ObservableObject {
-    @Published var books: [Book]
-    
+    private let modelContext: ModelContext
     private let getBooksApi: GetBooksApi
 
-    init(getBooksApi: GetBooksApi = GetBooksFromResource()) {
+    init(modelContext: ModelContext, getBooksApi: GetBooksApi = GetBooksFromResource()) {
+        self.modelContext = modelContext
         self.getBooksApi = getBooksApi
-        self.books = []
     }
     
     func load() {
         Task {
             switch getBooksApi.getListOfBooks() {
             case .success(let books):
-                self.books = books
+                for book in books {
+                    modelContext.insert(
+                        BookModel(id: book.id, 
+                                  title: book.title,
+                                  author: book.author,
+                                  rating: book.rating,
+                                  type: book.type))
+                }
             case .failure:
                 // TODO: show error toast here
                 print("Technical error")

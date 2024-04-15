@@ -10,9 +10,9 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-//    @Query private var books: [Book]
     @StateObject var viewModel: TopChartViewModel
     
+    @Query private var books: [BookModel]
     @State private var appliedEbookSelected = false
     @State private var appliedAudiobookSelected = false
     @State private var showFilterView = false
@@ -61,8 +61,8 @@ struct ContentView: View {
                     }
                     .listRowSeparator(.hidden)
  
-                    ForEach(viewModel.books.indices, id: \.self) { index in
-                        BookItemView(index: index, book: viewModel.books[index])
+                    ForEach(books.indices, id: \.self) { index in
+                        BookItemView(index: index, book: books[index])
                             .listRowSeparator(.hidden)
                     }
                 }
@@ -97,7 +97,7 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView(viewModel: TopChartViewModel())
-        .modelContainer(for: Item.self, inMemory: true)
-}
+//#Preview {
+//    ContentView(viewModel: TopChartViewModel(modelContext: sharedModelContainer.))
+//        .modelContainer(for: BookModel.self, inMemory: true)
+//}

@@ -12,7 +12,7 @@ import SwiftData
 struct everandTopChartsApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            BookModel.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +25,7 @@ struct everandTopChartsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: TopChartViewModel())
+            ContentView(viewModel: TopChartViewModel(modelContext: sharedModelContainer.mainContext))
         }
         .modelContainer(sharedModelContainer)
     }

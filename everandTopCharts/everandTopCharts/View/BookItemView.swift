@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BookItemView: View {
     let index: Int
-    let book: Book
+    let book: BookModel
     
     var body: some View {
         HStack {
