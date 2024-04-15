@@ -22,7 +22,7 @@ struct BookItemView: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(maxWidth: 50, maxHeight: 50)
                     .foregroundColor(.secondary)
-                if book.type == .audioBook {
+                if book.type == BookType.audioBook.rawValue {
                     Image(systemName: "headphones.circle.fill")
                         .resizable()
                         .frame(maxWidth: 18, maxHeight: 18)

@@ -9,10 +9,8 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
     @StateObject var viewModel: TopChartViewModel
     
-    @Query private var books: [BookModel]
     @State private var appliedEbookSelected = false
     @State private var appliedAudiobookSelected = false
     @State private var showFilterView = false
@@ -61,10 +59,7 @@ struct ContentView: View {
                     }
                     .listRowSeparator(.hidden)
  
-                    ForEach(books.indices, id: \.self) { index in
-                        BookItemView(index: index, book: books[index])
-                            .listRowSeparator(.hidden)
-                    }
+                    BookListItemView(bookFilter: getFilterList())
                 }
             }
             .listStyle(.plain)
@@ -95,9 +90,16 @@ struct ContentView: View {
             return "Formats"
         }
     }
+    
+    private func getFilterList() -> BookListFilter {
+        if appliedEbookSelected && appliedAudiobookSelected {
+            return .none
+        } else if appliedEbookSelected {
+            return .eBook
+        } else if appliedAudiobookSelected {
+            return .audioBook
+        } else {
+            return .none
+        }
+    }
 }
-
-//#Preview {
-//    ContentView(viewModel: TopChartViewModel(modelContext: sharedModelContainer.))
-//        .modelContainer(for: BookModel.self, inMemory: true)
-//}

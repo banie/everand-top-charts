@@ -25,6 +25,7 @@
 		71C9C7042BCA32C7005A29CB /* everandTopChartsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9C7032BCA32C7005A29CB /* everandTopChartsUITestsLaunchTests.swift */; };
 		71D7ACF92BCC8651009C1F29 /* ToggleStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7ACF82BCC8651009C1F29 /* ToggleStyling.swift */; };
 		71D7ACFB2BCCA053009C1F29 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7ACFA2BCCA053009C1F29 /* RoundedCorner.swift */; };
+		71D7ACFD2BCCBBDF009C1F29 /* BookListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7ACFC2BCCBBDF009C1F29 /* BookListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		71C9C7032BCA32C7005A29CB /* everandTopChartsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = everandTopChartsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		71D7ACF82BCC8651009C1F29 /* ToggleStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStyling.swift; sourceTree = "<group>"; };
 		71D7ACFA2BCCA053009C1F29 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		71D7ACFC2BCCBBDF009C1F29 /* BookListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				7105F0A62BCC59DB000055CE /* Styles */,
 				71C9C6E62BCA32C4005A29CB /* ContentView.swift */,
 				7105F0922BCB9CC1000055CE /* BookItemView.swift */,
+				71D7ACFC2BCCBBDF009C1F29 /* BookListItemView.swift */,
 				7105F0A92BCC648C000055CE /* FilterBooksView.swift */,
 			);
 			path = View;
@@ -349,6 +352,7 @@
 				7105F0AA2BCC648C000055CE /* FilterBooksView.swift in Sources */,
 				7105F0A32BCC4241000055CE /* GetFromLocalResource.swift in Sources */,
 				7105F0A82BCC59ED000055CE /* ButtonStyling.swift in Sources */,
+				71D7ACFD2BCCBBDF009C1F29 /* BookListItemView.swift in Sources */,
 				7105F0A22BCC4241000055CE /* GetBooks.swift in Sources */,
 				71C9C6E52BCA32C4005A29CB /* everandTopChartsApp.swift in Sources */,
 			);

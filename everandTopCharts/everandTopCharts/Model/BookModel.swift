@@ -14,14 +14,14 @@ final class BookModel {
     let title: String
     let author: String
     let rating: Int
-    let type: BookType
+    let type: String
     
     init(id: Int, title: String, author: String, rating: Int, type: BookType) {
         self.id = id
         self.title = title
         self.author = author
         self.rating = rating
-        self.type = type
+        self.type = type.rawValue
     }
 }
 
