@@ -26,6 +26,7 @@ struct BookItemView: View {
                     Image(systemName: "headphones.circle.fill")
                         .resizable()
                         .frame(maxWidth: 18, maxHeight: 18)
+                        .foregroundColor(.secondary)
                 }
             }
             VStack(spacing: 2) {

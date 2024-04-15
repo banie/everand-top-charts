@@ -18,8 +18,8 @@ struct CheckboxToggleStyle: ToggleStyle {
                 .resizable()
                 .frame(width: 15, height: 15)
                 .foregroundColor(configuration.isOn ? .primary : .secondary)
-                .onTapGesture { configuration.isOn.toggle() }
         }
+        .onTapGesture { configuration.isOn.toggle() }
     }
 }
 
