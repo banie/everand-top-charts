@@ -45,6 +45,13 @@ struct ContentView: View {
                             }
                         }
                         .borderedCapsuledButton()
+                        .sheet(isPresented: $showFilterView) {
+                            FilterBooksView(appliedEbookSelected: $appliedEbookSelected,
+                                            appliedAudiobookSelected: $appliedAudiobookSelected,
+                                            showThisView: $showFilterView)
+                            .presentationDetents([.height(250)])
+                            .presentationDragIndicator(.visible)
+                        }
                         
                         if appliedEbookSelected || appliedAudiobookSelected {
                             Button(action: {
@@ -65,13 +72,6 @@ struct ContentView: View {
             .listStyle(.plain)
             .navigationTitle("Top Chart")
             .navigationBarTitleDisplayMode(.inline)
-            
-            if showFilterView {
-                FilterBooksView(appliedEbookSelected: $appliedEbookSelected,
-                                appliedAudiobookSelected: $appliedAudiobookSelected,
-                                showThisView: $showFilterView)
-                    .transition(.move(edge: .bottom))
-            }
         } detail: {
             Text("Select an item")
         }.onAppear() {

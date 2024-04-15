@@ -17,12 +17,6 @@ struct FilterBooksView: View {
 
     var body: some View {
         VStack {
-            Image(systemName: "rectangle.fill")
-                .resizable()
-                .frame(maxWidth: 30, maxHeight: 3)
-                .foregroundColor(.secondary)
-                .padding(.top, 10)
-            
             HStack {
                 Text("Formats")
                     .fontWeight(.medium)
@@ -32,10 +26,13 @@ struct FilterBooksView: View {
                     showThisView = false
                 }) {
                     Image(systemName: "x.circle.fill")
-                        .tint(.secondary)
+                        .resizable()
+                        .frame(maxWidth: 18, maxHeight: 18)
+                        .tint(.primary)
                 }
             }
             .padding(.horizontal, 25)
+            .padding(.top, 10)
             
             Button(action: {
                 isEbookSelected = false
@@ -47,7 +44,7 @@ struct FilterBooksView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 25)
-            .padding(.top, 1)
+            .padding(.vertical, 1)
             .padding(.bottom, 5)
 
             Toggle("Ebooks", isOn: $isEbookSelected)
@@ -69,12 +66,6 @@ struct FilterBooksView: View {
             .padding(.vertical)
             .padding(.horizontal, 23)
         }
-        .background(Color(.systemBackground))
-        .roundedCorner(30, corners: [.topLeft, .topRight])
-        .shadow(radius: 15)
-        .mask(Rectangle()
-            .padding(.top, -30)
-            .padding(.bottom, 15))
         .onAppear() {
             isEbookSelected = appliedEbookSelected
             isAudiobookSelected = appliedAudiobookSelected
