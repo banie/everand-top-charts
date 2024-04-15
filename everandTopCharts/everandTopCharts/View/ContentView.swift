@@ -31,21 +31,34 @@ struct ContentView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .listRowSeparator(.hidden)
                     
-                    Button(action: {
-                        withAnimation {
-                            showFilterView.toggle()
+                    HStack {
+                        Button(action: {
+                            withAnimation {
+                                showFilterView.toggle()
+                            }
+                        }) {
+                            HStack {
+                                Text(getFilterText())
+                                    .font(.caption)
+                                Image(systemName: "chevron.down")
+                                    .resizable()
+                                    .fontWeight(.heavy)
+                                    .frame(maxWidth: 10, maxHeight: 5)
+                            }
                         }
-                    }) {
-                        HStack {
-                            Text("Formats")
-                                .font(.caption)
-                            Image(systemName: "chevron.down")
-                                .resizable()
-                                .fontWeight(.heavy)
-                                .frame(maxWidth: 10, maxHeight: 5)
+                        .borderedCapsuledButton()
+                        
+                        if appliedEbookSelected || appliedAudiobookSelected {
+                            Button(action: {
+                                appliedEbookSelected = false
+                                appliedAudiobookSelected = false
+                            }) {
+                                Text("Clear all")
+                                    .font(.caption)
+                                    .foregroundColor(appliedEbookSelected || appliedAudiobookSelected ? .primary : .secondary)
+                            }
                         }
                     }
-                    .borderedCapsuledButton()
                     .listRowSeparator(.hidden)
  
                     ForEach(viewModel.books.indices, id: \.self) { index in
@@ -58,16 +71,6 @@ struct ContentView: View {
             .navigationTitle("Top Chart")
             .navigationBarTitleDisplayMode(.inline)
             
-//            if showFilterView {
-//                GeometryReader { reader in
-//                    VStack {
-//                        Spacer()
-//                        FilterBooksView()
-//                    }
-//                }
-//                .transition(.move(edge: .bottom))
-//            }
-            
             if showFilterView {
                 FilterBooksView(appliedEbookSelected: $appliedEbookSelected,
                                 appliedAudiobookSelected: $appliedAudiobookSelected,
@@ -78,6 +81,18 @@ struct ContentView: View {
             Text("Select an item")
         }.onAppear() {
             viewModel.load()
+        }
+    }
+    
+    private func getFilterText() -> String {
+        if appliedEbookSelected && appliedAudiobookSelected {
+            return "Ebooks, Audiobooks"
+        } else if appliedEbookSelected {
+            return "Ebooks"
+        } else if appliedAudiobookSelected {
+            return "Audiobooks"
+        } else {
+            return "Formats"
         }
     }
 }
