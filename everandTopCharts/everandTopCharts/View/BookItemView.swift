@@ -23,7 +23,7 @@ struct BookItemView: View {
                 .foregroundColor(.secondary)
             VStack(spacing: 2) {
                 Text(book.title)
-                    .font(.title2)
+                    .font(.title3)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Text(book.author)
                     .font(.subheadline)
@@ -32,6 +32,9 @@ struct BookItemView: View {
                     let numOfStars: Int = book.rating
                     ForEach(1...numOfStars, id: \.self) { _ in
                         Image(systemName: "star.fill")
+                            .resizable()
+                            .frame(maxWidth: 12, maxHeight: 12)
+                            .padding(2)
                     }
                 }
                 .padding(.top, 5)
