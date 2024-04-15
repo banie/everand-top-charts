@@ -16,11 +16,18 @@ struct BookItemView: View {
             Text("\(index + 1). ")
                 .frame(maxHeight: .infinity, alignment: .top)
                 .padding(.top)
-            Image(systemName: "book.closed.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: 50, maxHeight: 50)
-                .foregroundColor(.secondary)
+            ZStack(alignment: .bottomTrailing) {
+                Image(systemName: "book.closed.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxWidth: 50, maxHeight: 50)
+                    .foregroundColor(.secondary)
+                if book.type == .audioBook {
+                    Image(systemName: "headphones.circle.fill")
+                        .resizable()
+                        .frame(maxWidth: 18, maxHeight: 18)
+                }
+            }
             VStack(spacing: 2) {
                 Text(book.title)
                     .font(.title3)
