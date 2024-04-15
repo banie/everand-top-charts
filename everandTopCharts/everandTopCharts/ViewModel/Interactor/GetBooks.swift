@@ -8,7 +8,7 @@
 import Foundation
 
 protocol GetBooksApi {
-    func getListOfBooks() -> Result<[Book], ApiError>
+    func getListOfBooks() async -> Result<[Book], ApiError>
 }
 
 class GetBooksFromResource: GetBooksApi {
@@ -18,7 +18,7 @@ class GetBooksFromResource: GetBooksApi {
         self.getRequestApi = getRequestApi
     }
     
-    func getListOfBooks() -> Result<[Book], ApiError> {
-        return getRequestApi.get(from: "book_list")
+    func getListOfBooks() async -> Result<[Book], ApiError> {
+        return await getRequestApi.get(from: "book_list")
     }
 }

@@ -8,12 +8,12 @@
 import Foundation
 
 protocol GetDataApi {
-    func get(from fileName: String) -> Result<Data, ApiError>
+    func get(from fileName: String) async -> Result<Data, ApiError>
 }
 
 class GetDataFromLocalResource: GetDataApi {
     
-    func get(from fileName: String) -> Result<Data, ApiError> {
+    func get(from fileName: String) async -> Result<Data, ApiError> {
         guard let path = Bundle.main.path(forResource: fileName, ofType: "json") else {
             print("not able to construct path with filename: \(fileName)")
             return .failure(.invalidPath)

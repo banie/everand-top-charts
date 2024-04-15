@@ -22,7 +22,7 @@ final class GetFromLocalResourceTests: XCTestCase {
         apiMock.dataResult = nil
     }
 
-    func testDecoding() throws {
+    func testDecoding() async throws {
         let sampleResponse = """
         [
                {"id": 43, "title": "The Handmaid's Tale", "author": "Margaret Atwood", "rating": 4, "type": "eBook"},
@@ -32,7 +32,7 @@ final class GetFromLocalResourceTests: XCTestCase {
         
         apiMock.dataResult = .success(sampleResponse)
         
-        let result: Result<[Book], ApiError> = interactor.get(from: "dummy_path")
+        let result: Result<[Book], ApiError> = await interactor.get(from: "dummy_path")
         
         if case let .success(books) = result {
             XCTAssertEqual(2, books.count)

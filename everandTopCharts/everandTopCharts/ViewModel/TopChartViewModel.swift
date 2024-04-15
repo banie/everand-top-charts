@@ -20,7 +20,7 @@ class TopChartViewModel: ObservableObject {
     
     func load() {
         Task {
-            switch getBooksApi.getListOfBooks() {
+            switch await getBooksApi.getListOfBooks() {
             case .success(let books):
                 for book in books {
                     modelContext.insert(

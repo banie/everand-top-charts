@@ -16,9 +16,9 @@ class GetEntitiesFromLocalResource {
         decoder = JSONDecoder()
     }
     
-    func get<T>(from fileName: String) -> Result<T, ApiError> where T: Decodable {
+    func get<T>(from fileName: String) async -> Result<T, ApiError> where T: Decodable {
         let data: Data
-        switch getDataApi.get(from: fileName) {
+        switch await getDataApi.get(from: fileName) {
         case .success(let dataResult):
             data = dataResult
         case .failure(let error):
