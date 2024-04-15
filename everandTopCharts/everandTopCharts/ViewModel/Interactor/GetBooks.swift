@@ -7,20 +7,14 @@
 
 import Foundation
 
-public enum ApiError: Error {
-    case invalidPath
-    case invalidUrl
-    case parsingError
-}
-
 protocol GetBooksApi {
     func getListOfBooks() -> Result<[Book], ApiError>
 }
 
 class GetBooksFromResource: GetBooksApi {
-    private let getRequestApi: GetFromLocalResource
+    private let getRequestApi: GetEntitiesFromLocalResource
     
-    init(getRequestApi: GetFromLocalResource = GetFromLocalResource()) {
+    init(getRequestApi: GetEntitiesFromLocalResource = GetEntitiesFromLocalResource()) {
         self.getRequestApi = getRequestApi
     }
     

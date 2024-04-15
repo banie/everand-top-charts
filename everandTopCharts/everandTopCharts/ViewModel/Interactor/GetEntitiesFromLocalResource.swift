@@ -1,5 +1,5 @@
 //
-//  GetFromLocalResource.swift
+//  GetEntitiesFromLocalResource.swift
 //  Guidomia
 //
 //  Created by Banie Setijoso on 2023-02-03.
@@ -7,23 +7,25 @@
 
 import Foundation
 
-class GetFromLocalResource {
-    let decoder: JSONDecoder
+class GetEntitiesFromLocalResource {
+    private let getDataApi: GetDataApi
+    private let decoder: JSONDecoder
     
-    init() {
+    init(getDataApi: GetDataApi = GetDataFromLocalResource()) {
+        self.getDataApi = getDataApi
         decoder = JSONDecoder()
     }
     
     func get<T>(from fileName: String) -> Result<T, ApiError> where T: Decodable {
-        guard let path = Bundle.main.path(forResource: fileName, ofType: "json") else {
-            print("not able to construct path with filename: \(fileName)")
-            return .failure(.invalidPath)
+        let data: Data
+        switch getDataApi.get(from: fileName) {
+        case .success(let dataResult):
+            data = dataResult
+        case .failure(let error):
+            return .failure(error)
         }
         
-        let url = URL(fileURLWithPath: path)
-        
         do {
-            let data = try Data(contentsOf: url)
             let items = try decoder.decode(T.self, from: data)
             return .success(items)
         } catch {
